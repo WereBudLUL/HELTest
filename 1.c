@@ -41,12 +41,35 @@ void reverse (int *array22)
     }
 }
 
+void arithmetical_mean(int * array33)
+{
+    int median = 0;
+    for(int i = 0;i<25;i++)
+    {
+        median+=array33[i];
+    }
+    median /= 25;
+    printf("\n\nMedian: %d\n\nAlle Abweichungen von +-20 Prozent mit Median ausgetauscht: \n",median);
+    
+    for(int i = 0;i<25;i++)
+    {
+        if(array33[i] < median * 0.80 || array33[i] > median * 1.20)
+        {
+            array33[i] = median;
+        }
+        printf("%d ",array33[i]);
+    }
+    
+   
+}
+
 int main ()
 {
 
 
   int array[25];
   int array2[25];
+  int array3[25];
 
 
   randnum (array);
@@ -59,7 +82,13 @@ int main ()
     }
 
   reverse (array2);
-
+  
+   for (int g = 0; g < 25; g++)
+    {
+      array3[g] = array[g];
+    }
+  
+  arithmetical_mean(array3);
 
   return 0;
 }
