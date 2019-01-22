@@ -59,8 +59,26 @@ void arithmetical_mean(int * array33)
         }
         printf("%d ",array33[i]);
     }
+}
+
+void min_max(int * array44)
+{
+    int min = array44[0];
+    int max = array44[0];
     
-   
+    for(int i = 0;i<25;i++)
+    {
+        if(min > array44[i])
+        {
+            min = array44[i];
+        }
+        if(max < array44[i])
+        {
+            max = array44[i];
+        }
+    }
+    printf("\n\nMin: %d\n",min);
+    printf("\nMax: %d",max);
 }
 
 int main ()
@@ -89,6 +107,7 @@ int main ()
     }
   
   arithmetical_mean(array3);
-
+  min_max(array);
+  
   return 0;
 }
