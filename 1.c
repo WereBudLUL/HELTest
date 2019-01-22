@@ -49,7 +49,7 @@ void arithmetical_mean(int * array33)
         median+=array33[i];
     }
     median /= 25;
-    printf("\n\nMedian: %d\n\nAlle Abweichungen von +-20 Prozent mit Median ausgetauscht: \n",median);
+    printf("\n\nMedian: %d\n\nAlle Abweichungen von +-20\%% mit Median ausgetauscht: \n",median);
     
     for(int i = 0;i<25;i++)
     {
@@ -81,6 +81,29 @@ void min_max(int * array44)
     printf("\nMax: %d",max);
 }
 
+void count_12(int * array55)
+{
+    int one = 0;
+    int two = 0;
+    int three = 0;
+    for(int i = 0;i<25;i++)
+    {
+        if(array55[i]<10)
+        {
+            one++;
+        }
+        if(array55[i]>=10 && array55[i] < 100)
+        {
+            two++;
+        }
+        if(array55[i] == 100)
+        {
+            three++;
+        }
+    }
+    printf("\n\nEinstellig: %d \n\nZweistellig: %d \n\nDreistellig: %d",one,two,three);
+}
+
 int main ()
 {
 
@@ -108,6 +131,8 @@ int main ()
   
   arithmetical_mean(array3);
   min_max(array);
+  count_12(array);
+  
   
   return 0;
 }
